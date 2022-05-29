@@ -1,0 +1,544 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="messageBox">
+</div>
+
+<div class="menu">
+	<div class="logo">
+		<image class="logoImg" src="static/media/images/logo.png" />
+	</div>
+
+	<div class="adminLogoutBtn">
+		<a href="{{ url_for('logout') }}">
+			<i class="fas fa-power-off"></i>
+		</a>
+	</div>
+</div>
+
+<div id="deleteAdminPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete admin</h4>
+      </div>
+      <div class="modal-body">
+      	<p id="deleteAdminMessage"></p>
+      	<button id="deleteAdminBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteDistributorPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete distributor</h4>
+      </div>
+      <div class="modal-body">
+        <p id="deleteDistributorMessage"></p>
+        <button id="deleteDistributorBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteDirectorPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete director</h4>
+      </div>
+      <div class="modal-body">
+      	<p id="deleteDirectorMessage"></p>
+      	<button id="deleteDirectorBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteTeacherPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete teacher</h4>
+      </div>
+      <div class="modal-body">
+      	<p id="deleteTeacherMessage"></p>
+      	<button id="deleteTeacherBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteConsumerPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete consumer</h4>
+      </div>
+      <div class="modal-body">
+        <p id="deleteConsumerMessage"></p>
+        <button id="deleteConsumerBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteSchoolPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete school</h4>
+      </div>
+      <div class="modal-body">
+      	<p id="deleteSchoolMessage"></p>
+      	<button id="deleteSchoolBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteNotificationPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete notification</h4>
+      </div>
+      <div class="modal-body">
+        <p id="deleteNotificationMessage"></p>
+        <button id="deleteNotificationBtn" type="button" class="btn btn-default" >Delete</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newAdminPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create admin</h4>
+      </div>
+      <div class="modal-body">
+      	<input class="form-control" id="newAdminEmailInput" type="text" placeholder="email" />
+        <br>
+      	<button id="newAdminCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newAdminSubmitMsg" class="submitMsg"></p> 
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newDistributorPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create distributor</h4>
+      </div>
+      <div class="modal-body">
+        <input class="form-control" id="newDistributorEmailInput" type="text" placeholder="email" />
+        <br>
+        <button id="newDistributorCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newDistributorSubmitMsg" class="submitMsg"></p> 
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newSchoolPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create school</h4>
+      </div>
+      <div class="modal-body">
+      	<input class="form-control" id="newSchoolInput" type="text" placeholder="school name" />
+        <br>
+        <select class="form-control" id="newSchoolLanguageInput">
+        </select>
+        <br>
+        <div class="input-group">
+            <input id="newSchoolInputSubscriptionEndDate" data-date-format="yyyy-mm-dd" readonly="readonly" type="text" class="datepicker form-control" placeholder="subscription end date">
+            <div id="newSchoolInputDatepickerBtn" class="input-group-addon">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+        </div>
+        <br>
+        <input class="form-control" id="newSchoolInputClassroomLimit" type="number" step="1" min="0" placeholder="classroom limit" />
+        <br>
+        <input class="form-control" id="newSchoolInputStudentLimit" type="number" step="1" min="0" placeholder="student limit" />
+        <br>
+      	<button id="newSchoolCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="editSchoolPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit school</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="editSchoolNameInput">School name</label>
+          <input class="form-control" id="editSchoolNameInput" type="text" placeholder="school name" />
+        </div>
+        <div class="form-group">
+          <label for="editSchoolLanguageInput">School language</label>
+          <select class="form-control" id="editSchoolLanguageInput">
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="editSchoolInputSubscriptionStartDate">Subscription start</label>
+          <div class="input-group">
+              <input id="editSchoolInputSubscriptionStartDate" data-date-format="yyyy-mm-dd" readonly="readonly" type="text" class="datepicker form-control" placeholder="subscription start date">
+              <div id="editSchoolInputDateStartPickerBtn" class="input-group-addon">
+                  <i class="far fa-calendar-alt"></i>
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editSchoolInputSubscriptionEndDate">Subscription end</label>
+          <div class="input-group">
+              <input id="editSchoolInputSubscriptionEndDate" data-date-format="yyyy-mm-dd" readonly="readonly" type="text" class="datepicker form-control" placeholder="subscription end date">
+              <div id="editSchoolInputDateEndPickerBtn" class="input-group-addon">
+                  <i class="far fa-calendar-alt"></i>
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editSchoolClassroomLimit">Classroom limit</label>
+          <input class="form-control" id="editSchoolClassroomLimit" type="number" step="1" min="0" placeholder="classroom limit" />
+        </div>
+        <div class="form-group">
+          <label for="editSchoolStudentLimit">Student limit</label>
+          <input class="form-control" id="editSchoolStudentLimit" type="number" step="1" min="0" placeholder="student limit" />
+        </div>
+        <button id="editSchoolUpdateBtn" type="button" class="btn btn-default newEntrySubmit" >Update</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newNotificationPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create notification</h4>
+      </div>
+      <div class="modal-body">
+        <select class="form-control" id="newNotificationInput">
+        </select>
+        <br>
+        <select class="form-control" id="newNotificationLanguageInput">
+        </select>
+        <br>
+        <textarea class="form-control" rows="5" id="newNotificationTextContentInput" placeholder="Text format..."></textarea>
+        <br>
+        <textarea class="form-control" rows="5" id="newNotificationHtmlContentInput" placeholder="Html format..."></textarea>
+        <br>
+        <button id="newNotificationCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newDirectorPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create director</h4>
+      </div>
+      <div class="modal-body">
+      	<input class="form-control" id="newDirectorEmailInput" type="text" placeholder="email" />
+        <br>
+      	<select class="form-control" id="newDirectorSchoolInput">
+      	</select>
+        <br>
+      	<button id="newDirectorCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newDirectorSubmitMsg" class="submitMsg"></p> 
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newTeacherPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create teacher</h4>
+      </div>
+      <div class="modal-body">
+      	<input class="form-control" id="newTeacherEmailInput" type="text" placeholder="email" />
+        <br>
+      	<select class="form-control" id="newTeacherSchoolInput">
+      	</select>
+        <br>
+      	<button id="newTeacherCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newTeacherSubmitMsg" class="submitMsg"></p>      
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newSchoolTeacherMultiPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create multiple schools & teachers with JSON</h4>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <input id="newSchoolMultiInputSubscriptionEndDate" data-date-format="yyyy-mm-dd" readonly="readonly" type="text" class="datepicker form-control" placeholder="subscription end date">
+          <div id="newSchoolMultiInputDatepickerBtn" class="input-group-addon">
+              <i class="far fa-calendar-alt"></i>
+          </div>
+        </div>
+        <textarea id="schoolTeacherMultiInput" class="form-control" rows="5" placeholder='[{"school": "School 1", "teacher": "teacher1@teacher.com", "language": "English"}, {"school": "School 2", "teacher": "teacher2@teacher.com", "language": "English"} ...]'></textarea>
+        <br>
+        <div id="multiTeacherShoolTable" class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">Schools</div>
+            <div class="col-sm-4">Teachers</div>
+            <div class="col-sm-4">Language</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-4" id="sortedSchoolsDiv"></div>
+            <div class="col-sm-4" id="sortedTeachersDiv"></div>
+            <div class="col-sm-4" id="sortedLanguageDiv"></div>
+          </div>
+        </div>
+        <br>
+        <button id="newSchoolTeacherMultiCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newSchoolTeacherMultiSubmitMsg" class="submitMsg"></p>      
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newConsumerPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create consumers with JSON</h4>
+      </div>
+      <div class="modal-body">
+        <textarea id="consumersInput" class="form-control" rows="5" placeholder='["consumer1@email.com","consumer2@email.com",...]'></textarea>
+        <br>
+        <button id="newConsumerCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newConsumerSubmitMsg" class="submitMsg"></p>      
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newTestStudentPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create test student accounts</h4>
+      </div>
+      <div class="modal-body">
+        <div class="formEntryGroupWrap">
+          <select class="form-control" id="newTestStudentSchoolInput">
+          </select>
+          <span id="newTestStudentSchoolInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newTestStudentSchoolInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newTestStudentGuardianInput" type="text" placeholder="guardian email" />
+          <span id="newTestStudentGuardianInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newTestStudentGuardianInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newTestStudentNumberAccountsInput" type="number" step="1" min="1" placeholder="number of accounts" />
+          <span id="newTestStudentNumberAccountsInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newTestStudentNumberAccountsInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newTestStudentNumberClassroomsInput" type="number" step="1" min="1" placeholder="number of classrooms" />
+          <span id="newTestStudentNumberClassroomsInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newTestStudentNumberClassroomsInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newTestStudentNameInput" type="text" placeholder="student name" />
+          <span id="newTestStudentNameInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newTestStudentNameInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="radio">
+          <label><input type="radio" name="newTestStudentRandomPassword" value=true checked />Random passwords</label>
+        </div> 
+        <div class="radio">  
+          <label><input type="radio" name="newTestStudentRandomPassword" value=false />Predictable passwords(match username)</label>
+        </div>
+        <br>
+        <button id="newTestStudentCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Create</button>
+        <p id="newTestStudentSubmitMsg" class="submitMsg"></p>      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="serviceConditionsPanel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Service conditions</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title">Version</h4>
+        <input type="number" id="serviceConditionsVersion" class="form-control"> 
+        <br>
+        <h4 class="modal-title">Terms of service</h4>
+        <textarea id="termsOfServiceInput" class="form-control" rows="5"></textarea>
+        <br>
+        <h4 class="modal-title">Privacy policy</h4>
+        <textarea id="privacyPolicyInput" class="form-control" rows="5"></textarea>
+        <br>
+        <h4 class="modal-title">Newsletter consent</h4>
+        <textarea id="newsletterConsentInput" class="form-control" rows="5"></textarea> 
+        <br>
+        <button id="serviceConditionsCreateBtn" type="button" class="btn btn-default newEntrySubmit" >Save</button> 
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="tableWrapper">
+  	
+  	<button id="addAdminBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Administrators</h4>
+  	<div id="admins-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="addDistributorBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Distributors</h4>
+    <div id="distributors-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+  	
+  	<button id="addSchoolBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Schools</h4>
+  	<div id="schools-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="addNotificationBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Notifications</h4>
+    <div id="notifications-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+  	
+  	<button id="addDirectorBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Directors</h4>
+  	<div id="directors-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+  	
+  	<button id="addTeacherBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Teachers</h4>
+  	<div id="teachers-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="addSchoolTeacherMultiBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Schools & Teachers JSON</h4>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="addConsumerBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Consumers</h4>
+    <div id="consumers-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="addTestStudentBtn" type="button" class="btn btn-default addEntry">New</button>
+    <h4>Test student accounts</h4>
+    <div id="test-student-table"></div>
+  </div>
+
+  <div class="tableWrapper">
+    
+    <button id="serviceConditionsBtn" type="button" class="btn btn-default addEntry">Update</button>
+    <h4>Service conditions</h4>
+    <div id="consumers-table"></div>
+  </div>
+</div>
+
+<script src="static/js/admin/serverCalls.js"></script>
+<script src="static/js/admin/functions.js"></script>
+<script src="static/js/admin/events.js"></script>
+
+{% endblock %}

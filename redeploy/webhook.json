@@ -1,0 +1,7 @@
+[
+  {
+    "id": "redeploy-webhook",
+    "execute-command": "/services/teflon_user_backend/redeploy/redeploy_script.sh",
+    "command-working-directory": "/services/teflon_user_backend/"
+  }
+]

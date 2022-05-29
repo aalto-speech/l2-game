@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="languagePanel" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 id="languagePanelTitle" class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+            <div id="languagePanelContent">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="languageButton">
+      <i class="fas fa-language"></i>
+    </div>
+   <div class="login-container">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 login-box">
+      <div class="login-header">
+         <image class="formHeaderImg" src="../static/media/images/logo.png" />
+      </div>
+      <br> 
+      <div id="classroomEnrolmentForm">    
+        <h4 id="enrollPanelTitle" class="modal-title"></h4>
+        <br> 
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newStudentGuardianInput" type="text" placeholder="guardian email" maxlength="40" />
+          <span id="newStudentGuardianInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newStudentGuardianInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <div class="formEntryGroupWrap">
+          <input class="form-control" id="newStudentNameInput" type="text" placeholder="student name" maxlength="20" />
+          <span id="newStudentNameInput-validity-message" class="formElementValidityMessage"></span>
+          <i id="newStudentNameInput-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+        </div>
+        <br>
+        <button id="newStudentCreateBtn" type="button" class="btn btn-default newEntrySubmit" ></button>
+      </div>
+      <p id="newStudentPanelMsg" class="submitMsg"></p>        
+    </div>
+  </div>
+
+<script src="static/js/translations/joinclassroom_page/joinclassroom_page_translations.js"></script>
+<script src="static/js/joinclassroom/student_enrolment.js"></script>
+
+{% endblock %}

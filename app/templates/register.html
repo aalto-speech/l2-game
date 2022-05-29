@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <div class="login-container">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 login-box">
+      <div class="login-header">
+         <image class="formHeaderImg" src="../static/media/images/logo.png" />
+      </div>
+       <br>
+            <form id="setPasswordForm" class="logForm" action="{{ url_for('register') }}" method=post>
+                <input id="emailInput" class="logInput form-control"  type=text name=email class=formin disabled>
+                <div id="hashInputWrap">
+                  <input id="hashInput" class="logInput form-control"  type=text name=hash class=formin>
+                </div>
+                <br>
+                <div class="formEntryGroupWrap">
+                   <input id="password1" class="logInput form-control"  type=password name=passwordA class=formin placeholder="choose password">
+                   <span id="password1-validity-message" class="formElementValidityMessage"></span>
+                   <i id="password1-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+                </div>
+                <br>
+                <div class="formEntryGroupWrap">
+                   <input id="password2" class="logInput form-control"  type=password name=passwordB class=formin placeholder="confirm password">
+                   <span id="password2-validity-message" class="formElementValidityMessage"></span>
+                   <i id="password2-validity-icon" class="formElementValidityIcon fas fa-check"></i>
+                </div>
+                <br>
+                <input id="registerBtn"  class="btn btn-default newEntrySubmit" type=submit value="Set password">
+            </form> 
+            <p id="responseMessage" class="submitMsg"></p>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+    </div>
+  </div>
+
+<script src="static/js/register/registration_process.js"></script>
+
+{% endblock %}

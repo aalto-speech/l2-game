@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="languagePanel" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 id="languagePanelTitle" class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+            <div id="languagePanelContent">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="languageButton">
+      <i class="fas fa-language"></i>
+    </div>
+    <div class="login-container">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4 login-box">
+        <div class="login-header">
+           <image class="formHeaderImg" src="../static/media/images/logo.png" />
+        </div>
+         <br>
+         <div id="giveConsentBtn" class="btn btn-default newEntrySubmit" ></div>
+         <br>
+         <div id="revokeConsentBtn" class="btn btn-default newEntrySubmit" ></div>
+         <p id="consentStatus" class="submitMsg"></p>
+      </div>
+    </div>
+
+<script src="static/js/translations/consent_page/consent_page_translations.js"></script>
+<script src="static/js/consent/consent_process.js"></script>
+
+{% endblock %}

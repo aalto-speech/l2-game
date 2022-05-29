@@ -1,0 +1,84 @@
+[
+    {
+        "school": "THIS IS MY FINAL TEST4444",
+        "teachers": [
+            "alex_tsm+finaltest14444@hotmail.com",
+            "alex_tsm+finaltest3332@hotmail.com"
+        ],
+        "classrooms": [
+            {
+                "classroom": "AGUA FRIA-JMB",
+                "students": [
+                    "bentosasdilvestre",
+                    "rodrigasdoantunes"
+                ]
+            },
+            {
+                "classroom": "AGUA FRIA-JMD",
+                "students": [
+                    "benjasdaminmelo",
+                    "lucianasdovieira"
+                ]
+            },
+            {
+                "classroom": "AGUA FRIA-JTC",
+                "students": [
+                    "artasdhurtavares",
+                    "ferasdnandopimentel",
+                    "layasdlahmaryah",
+                    "liaasdribeiro",
+                    "samsaduelbrito"
+                ]
+            },
+            {
+                "classroom": "AGUA FRIA-K3MD",
+                "students": [
+                    "aliadsneguedes",
+                    "beniasdciomelo",
+                    "bentasdoribeiro",
+                    "berasdnardolinhares",
+                    "enzasdobrito",
+                    "julasdiacastro",
+                    "mariasdaluizaborges",
+                    "mariasdavalentinaborges",
+                    "miguadselnunes",
+                    "pedrasdogolinac",
+                    "valenasdtinamaia"
+                ]
+            },
+            {
+                "classroom": "AGUA FRIA-K4MD",
+                "students": [
+                    "francasdisconaeff",
+                    "giovaasdnnarabelo",
+                    "gustaasdvovasconcelos",
+                    "joaovasdictorqueiroz",
+                    "juliaasdnaaccioly",
+                    "leticasdiapinto",
+                    "luisaasdaccioly",
+                    "mariaasdnamorais",
+                    "marianaasdrodrigues",
+                    "melissaasdbrigido",
+                    "simaofrasdeitas",
+                    "sophiabasdrito"
+                ]
+            }
+        ]
+    },
+    {
+        "school": "THIS IS MY FINAL TEST4444dd",
+        "teachers": [
+            "alex_tsm+finaltest144f44@hotmail.com",
+            "alex_tsm+finaltest3332@hotmail.com"
+        ],
+        "classrooms": [
+            {
+                "classroom": "AGUA FRIA-JMB",
+                "students": [
+                    "bentosasdilveddstre",
+                    "rodrigasdoantunes"
+                ]
+            }
+        ]
+    }
+]

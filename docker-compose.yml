@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  cms_flask:
+    build: .
+    container_name: cms_flask
+    env_file: ./envVars.local.txt
+    #restart: unless-stopped
+    restart: 'always'
+    ports: 
+       - 8085:80
+    volumes:
+       - .:/app
+
+volumes:
+   .:
+     driver: local
+

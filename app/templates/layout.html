@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<link rel="icon" type="image/png" href="static/media/images/favicon.ico"/>
+<title>TEFLON Schools</title>
+
+<link rel="stylesheet" type="text/css" href="static/thirdParty/bootstrap/bootstrap.min.css">
+
+<script src="static/thirdParty/jquery/jquery-1.12.4.js"></script>
+<script src="static/thirdParty/bootstrap/bootstrap.min.js"></script>
+<script src="static/thirdParty/bootstrap/bootstrap-filestyle.min.js"></script>
+<script src="static/thirdParty/underscore/underscore-min.js"></script> 
+<link rel="stylesheet" type="text/css" href="static/thirdParty/fontawesome/css/all.css">
+
+<link href="static/thirdParty/tabulator/tabulator_bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="static/thirdParty/tabulator/moment.js"></script>
+<script type="text/javascript" src="static/thirdParty/tabulator/tabulator.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="static/thirdParty/bootstrap/bootstrap-datepicker.min.css">
+<script src="static/thirdParty/bootstrap/bootstrap-datepicker.min.js"></script>
+
+<link rel="stylesheet" href="static/thirdParty/jquery/jquery.rateyo.min.css">
+<script src="static/thirdParty/jquery/jquery.rateyo.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+<script>
+function onReady(callback) {
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 200);
+}
+
+function setVisible(selector, visible) {
+  	document.getElementById(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(
+	function() {
+	  setVisible('page', true);
+	  setVisible('footerLoader', false);
+	}
+);
+</script>
+</head>
+<body>
+<div id="page">
+	{% block body %}
+
+	{% endblock %}
+</div>
+<div id="footerLoader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>
+</body>
+
+</html>

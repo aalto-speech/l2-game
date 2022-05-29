@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="messageBox">
+</div>
+
+<div class="menu">
+	<div class="logo">
+		<image class="logoImg" src="static/media/images/logo.png" />
+	</div>
+
+	<div class="adminLogoutBtn">
+		<a href="{{ url_for('logout') }}">
+			<i class="fas fa-power-off"></i>
+		</a>
+	</div>
+</div>
+
+<div id="content">
+	<h2>Under construction...</h2>
+</div>
+{% endblock %}

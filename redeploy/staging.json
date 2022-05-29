@@ -1,0 +1,7 @@
+[
+  {
+    "id": "stage-and-test-webhook",
+    "execute-command": "/services/teflon_user_backend/redeploy/stage_and_test_wrapper.sh",
+    "command-working-directory": "/services/teflon_user_backend/"
+  }
+]
